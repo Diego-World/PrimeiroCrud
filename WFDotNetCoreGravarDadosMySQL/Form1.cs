@@ -369,6 +369,7 @@ namespace WFDotNetCoreGravarDadosMySQL
             }
 
             //Demorou mais veio
+            //Demorou pra caralho
         }
 
 
