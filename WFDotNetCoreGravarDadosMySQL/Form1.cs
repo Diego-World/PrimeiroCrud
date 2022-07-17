@@ -105,38 +105,9 @@ namespace WFDotNetCoreGravarDadosMySQL
                                    MessageBoxIcon.Information);
                 }
 
-                id_contato_selecionado = null;
-                txtNome.Text = String.Empty;
-                txtEmail.Text = "";
-                txtTelefone.Text = "";
+                zerar_formulario();
 
                 carregar_Contatos();
-
-
-
-               /* cmd.CommandText = "INSERT INTO contato (nome, email, telefone) " +
-                    "VALUES " +
-                    "(@Nome, @Email, @Telefone) ";
-
-                cmd.Parameters.AddWithValue("@Nome", txtNome.Text);
-                cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@Telefone", txtTelefone.Text);
-
-                cmd.Prepare();
-                cmd.ExecuteNonQuery();
-
-
-                MessageBox.Show("Contato inserido com sucesso!",
-                               "Sucesso!", MessageBoxButtons.OK,
-                               MessageBoxIcon.Information);
-
-
-                txtNome.Text = String.Empty;
-                txtEmail.Text = "";
-                txtTelefone.Text = "";
-
-                carregar_Contatos(); */
-
 
             }
             catch (MySqlException ex)
@@ -291,8 +262,11 @@ namespace WFDotNetCoreGravarDadosMySQL
 
         private void txtNovo_Click(object sender, EventArgs e)
         {
+            zerar_formulario();
+        }
 
-
+        private void zerar_formulario()
+        {
             id_contato_selecionado = null;
 
             txtNome.Text = String.Empty;
@@ -302,9 +276,10 @@ namespace WFDotNetCoreGravarDadosMySQL
 
 
             button3.Visible = false;
-
-
         }
+
+
+
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -360,6 +335,8 @@ namespace WFDotNetCoreGravarDadosMySQL
 
                     carregar_Contatos();
 
+                    zerar_formulario();
+
                 }
 
 
@@ -390,6 +367,8 @@ namespace WFDotNetCoreGravarDadosMySQL
 
                 Conexao.Close();
             }
+
+            //Demorou mais veio
         }
 
 
